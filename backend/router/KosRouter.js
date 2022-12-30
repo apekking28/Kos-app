@@ -24,7 +24,7 @@ import {
 import {
   getAllDataLeave,
   getRumahAllWithDoctersPasiens,
-} from "../controllers/getQuery.js";
+} from "../controllers/getData.js";
 
 const router = express.Router();
 
