@@ -6,7 +6,6 @@ const kos = new Schema(
     kos: {
       type: String,
       required: true,
-      unique: true,
     },
     address: {
       type: String,

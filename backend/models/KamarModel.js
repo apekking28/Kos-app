@@ -6,7 +6,6 @@ const kamar = new Schema(
     noKamar: {
       type: String,
       required: true,
-      unique: true,
     },
     kosId: {
       type: Schema.Types.ObjectId,
@@ -14,7 +13,7 @@ const kamar = new Schema(
     },
   },
   {
-    timestamps: false,
+    timestamps: true,
   }
 );
 

@@ -22,13 +22,18 @@ export const getKamarId = async (req, res) => {
 };
 
 export const addKamar = async (req, res) => {
-  const { name } = req.body;
-  const oldName = await Kamar.findOne({ name });
+  const oldName = await Kamar.findOne({
+    noKamar: req.body.noKamar,
+    kosId: req.body.kosId,
+  });
   try {
     if (oldName) {
       return res.json("data sudah ada");
     }
-    const get = new Kamar(req.body);
+    const get = new Kamar({
+      noKamar: req.body.noKamar,
+      kosId: req.body.kosId,
+    });
     const add = await get.save();
     res.json({ status: 200, data: add, message: "succsess add data" });
   } catch (error) {
